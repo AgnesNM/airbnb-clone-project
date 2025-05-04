@@ -7,7 +7,7 @@ Project to polish up backend coding and DevOps skills
 
 The AirBnB clone project will help me polish up my backend dev skills
 
-### Technologies
+## Technologies
 
 - **Django** - a high-level Python web framework that promotes simple, straightforward design and quick development. 
 - **MySQL** - an open source relational database management system (RDBMS).
@@ -15,7 +15,7 @@ The AirBnB clone project will help me polish up my backend dev skills
 - **Docker** - Docker is an open source platform that helps developers build, deploy, execute, update and manage containerized apps.
 - **GitHub Actions** - a continuous integration/continuous delivery platform to help automate your build, test, and deployment process.
 
-### Team Roles
+## Team Roles
 
 - **Business Analyst (BA)**- converts the business needs of customers into specifications.  
 - **Product owner (PO)** - is in charge of the product's development and vision.
@@ -27,7 +27,7 @@ The AirBnB clone project will help me polish up my backend dev skills
 - **Test automation engineer** - creates and manages automated testing test scripts.
 - **DevOps engineer** - creates pipelines for continuous integration and continuous delivery (CI/CD) to expedite delivery.
     
-### Database Design
+## Database Design
 
 - **Key entities**: Users, Properties, Bookings, Reviews and Payments.
 
@@ -45,6 +45,12 @@ The AirBnB clone project will help me polish up my backend dev skills
 
 #### Payments
 **Fields**: Payment options, total cost, cost per night
+
+## Features
+**Main features**
+_- Guests booking_ - guests should be able to book a property for the number of nights they wish to stay. They should be able to customize their booking, based on demographic (adults, children and pets)
+- _Property listing_ - guests should be able to see a property's cost per night, availability, facilities and manager. Property managers can list more than one property.
+- _Payment system_ - guests should be able to pay for their stay. They should be able to choose the best payment option for them.
 
 ### License
 
