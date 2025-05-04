@@ -20,16 +20,15 @@ The AirBnB clone project will help me polish up my backend dev skills
     To be added    
 
 ### Team Roles
-- **Business Analyst (BA)**
-  
-- **Product owner (PO)**
-- **Project Manager (PM)**
-- **UI/UX designer**
-- **Software Architect**
-- **Software Developer**
-- **Quality assurance(QA) engineer**
-- **Test automation engineer**
-- **DevOps engineer**
+- **Business Analyst (BA)**- converts the business needs of customers into specifications.  
+- **Product owner (PO)** - is in charge of the product's development and vision.
+- **Project Manager (PM)** - ensures timely and cost-effective delivery of a product or its components.
+- **UI/UX designer** - converts a product's concept into designs that are easy to utilize.
+- **Software Architect** - chooses the right platforms and tools to carry out the product concept.
+- **Software Developer** - resolves any technical issues that may arise throughout the development process.
+- **Quality assurance(QA) engineer** - verifies that an application operates in accordance with the specifications
+- **Test automation engineer** - creates and manages automated testing test scripts.
+- **DevOps engineer** - creates pipelines for continuous integration and continuous delivery (CI/CD) to expedite delivery.
     
     
 
