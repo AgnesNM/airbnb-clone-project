@@ -60,8 +60,11 @@ _- Guests booking_ - guests should be able to book a property for the number of 
 
 Security is essesntial for protecting Personally Identifiable Information (PII). Processing payments also required adherence to Payment Card Industry Data Security Standard (PCI DSS standards)
 
-## CI/CD
+## CI/CD Pipelines
 
+CI/CD refers to a set of predetermined processes that developers must adhere to to provide new software. CI/CD pipelines makes it simple for developers to send code into production and then roll it back if there are any problems.
+
+Tools that could be used: GitHub Actions, Docker
 
 ### License
 
