@@ -9,11 +9,11 @@ The AirBnB clone project will help me polish up my backend dev skills
 
 ### Technologies
 
-- **Django** - 
-- **MySQL** - 
-- **GraphQL** - 
-- **Docker** - 
-- **GitHub Actions** - 
+- **Django** - a high-level Python web framework that promotes simple, straightforward design and quick development. 
+- **MySQL** - an open source relational database management system (RDBMS).
+- **GraphQL** - an API query language and runtime that uses your current data to fulfill queries.
+- **Docker** - Docker is an open source platform that helps developers build, deploy, execute, update and manage containerized apps.
+- **GitHub Actions** - a continuous integration/continuous delivery platform to help automate your build, test, and deployment process.
 
 ### Setup/Installation Requirements
 
