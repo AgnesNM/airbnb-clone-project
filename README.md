@@ -15,11 +15,8 @@ The AirBnB clone project will help me polish up my backend dev skills
 - **Docker** - Docker is an open source platform that helps developers build, deploy, execute, update and manage containerized apps.
 - **GitHub Actions** - a continuous integration/continuous delivery platform to help automate your build, test, and deployment process.
 
-### Setup/Installation Requirements
-
-    To be added    
-
 ### Team Roles
+
 - **Business Analyst (BA)**- converts the business needs of customers into specifications.  
 - **Product owner (PO)** - is in charge of the product's development and vision.
 - **Project Manager (PM)** - ensures timely and cost-effective delivery of a product or its components.
@@ -30,7 +27,25 @@ The AirBnB clone project will help me polish up my backend dev skills
 - **Test automation engineer** - creates and manages automated testing test scripts.
 - **DevOps engineer** - creates pipelines for continuous integration and continuous delivery (CI/CD) to expedite delivery.
     
-    
+### Database Design
+
+- **Key entities**: Users, Properties, Bookings, Reviews and Payments.
+
+#### Users
+**Fields**: Name, password, email
+
+#### Properties
+**Fields**: Name, location, availability, facilities, price per night, images
+
+#### Bookings
+**Fields**: Check in and check out dates, number of guests, guest demographic [adults, children, infants, pets]
+
+#### Reviews
+**Fields**: Text, name, star ratings
+
+#### Payments
+**Fields**: Payment options, total cost, cost per night
 
 ### License
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
