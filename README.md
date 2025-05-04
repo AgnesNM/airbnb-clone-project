@@ -18,6 +18,19 @@ The AirBnB clone project will help me polish up my backend dev skills
 ### Setup/Installation Requirements
 
     To be added    
+
+### Team Roles
+- **Business Analyst (BA)**
+  
+- **Product owner (PO)**
+- **Project Manager (PM)**
+- **UI/UX designer**
+- **Software Architect**
+- **Software Developer**
+- **Quality assurance(QA) engineer**
+- **Test automation engineer**
+- **DevOps engineer**
+    
     
 
 ### License
