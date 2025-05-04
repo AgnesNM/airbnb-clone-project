@@ -9,11 +9,11 @@ The AirBnB clone project will help me polish up my backend dev skills
 
 ### Technologies
 
-    Django
-    MySQL
-    GraphQL
-    Docker
-    GitHub Actions
+- **Django** - 
+- **MySQL** - 
+- **GraphQL** - 
+- **Docker** - 
+- **GitHub Actions** - 
 
 ### Setup/Installation Requirements
 
