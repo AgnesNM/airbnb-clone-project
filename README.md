@@ -60,6 +60,9 @@ _- Guests booking_ - guests should be able to book a property for the number of 
 
 Security is essesntial for protecting Personally Identifiable Information (PII). Processing payments also required adherence to Payment Card Industry Data Security Standard (PCI DSS standards)
 
+## CI/CD
+
+
 ### License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
