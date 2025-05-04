@@ -52,6 +52,14 @@ _- Guests booking_ - guests should be able to book a property for the number of 
 - _Property listing_ - guests should be able to see a property's cost per night, availability, facilities and manager. Property managers can list more than one property.
 - _Payment system_ - guests should be able to pay for their stay. They should be able to choose the best payment option for them.
 
+## API Security
+
+**Key security measures to be implemented**
+- _Authentication_ - different types of users will be authenticated, for example, property managers, and guests.
+- _Authorization_ - each user will have a different dashboard. Guests cannot access manager dashboards.
+
+Security is essesntial for protecting Personally Identifiable Information (PII). Processing payments also required adherence to Payment Card Industry Data Security Standard (PCI DSS standards)
+
 ### License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
