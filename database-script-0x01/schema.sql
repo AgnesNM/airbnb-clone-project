@@ -14,14 +14,16 @@ CREATE INDEX index_user_email ON User(email);
 
 CREATE TABLE Property (
   property_id UUID PRIMARY KEY,
-  host_id UUID FOREIGN KEY,
+  host_id UUID NOT NULL,
   name VARCHAR(255) NOT NULL,
-  description VARCHAR(255) UNIQUE NOT NULL,
+  description TEXT NOT NULL,
   location VARCHAR(255) NOT NULL,
-  price_per_night DECIMAL(255) NOT NULL,
+  price_per_night DECIMAL(10,2) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (host_id) REFERENCES User(user_id)
 );
 
+CREATE INDEX index_property_id ON Property(property_id);
 ```
 
