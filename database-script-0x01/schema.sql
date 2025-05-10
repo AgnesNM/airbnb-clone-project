@@ -1,6 +1,5 @@
-```sql
 -- User Table
-CREATE TABLE User (
+CREATE TABLE "User" (
   user_id UUID PRIMARY KEY,
   first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255) NOT NULL,
@@ -10,7 +9,7 @@ CREATE TABLE User (
   role ENUM('guest', 'host', 'admin') NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-CREATE INDEX index_user_email ON User(email);
+CREATE INDEX index_user_email ON "User"(email);
 
 -- Property Table
 CREATE TABLE Property (
@@ -21,8 +20,8 @@ CREATE TABLE Property (
   location VARCHAR(255) NOT NULL,
   price_per_night DECIMAL(10,2) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  FOREIGN KEY (host_id) REFERENCES User(user_id)
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (host_id) REFERENCES "User"(user_id)
 );
 CREATE INDEX index_property_id ON Property(property_id);
 
@@ -37,7 +36,7 @@ CREATE TABLE Booking (
   status ENUM('pending', 'confirmed', 'canceled') NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (property_id) REFERENCES Property(property_id),
-  FOREIGN KEY (user_id) REFERENCES User(user_id)
+  FOREIGN KEY (user_id) REFERENCES "User"(user_id)
 );
 CREATE INDEX index_booking_id ON Booking(booking_id);
 CREATE INDEX index_booking_property ON Booking(property_id);
@@ -62,7 +61,7 @@ CREATE TABLE Review (
   comment TEXT NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (property_id) REFERENCES Property(property_id),
-  FOREIGN KEY (user_id) REFERENCES User(user_id)                                              
+  FOREIGN KEY (user_id) REFERENCES "User"(user_id)                                              
 );
 
 -- Message Table
@@ -72,9 +71,6 @@ CREATE TABLE Message (
   recipient_id UUID NOT NULL,
   message_body TEXT NOT NULL,
   sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (sender_id) REFERENCES User(user_id),
-  FOREIGN KEY (recipient_id) REFERENCES User(user_id)                                             
+  FOREIGN KEY (sender_id) REFERENCES "User"(user_id),
+  FOREIGN KEY (recipient_id) REFERENCES "User"(user_id)                                             
 );
-
-```
-
