@@ -52,5 +52,17 @@ CREATE TABLE Payment (
   FOREIGN KEY (booking_id) REFERENCES Booking(booking_id)
 );
 CREATE INDEX index_payment_booking ON Payment(booking_id);
+
+-- Review Table
+CREATE TABLE Review (
+  review_id UUID PRIMARY KEY,
+  property_id UUID NOT NULL,
+  user_id UUID NOT NULL,
+  rating INTEGER NOT NULL CHECK (rating >= 1 AND rating <= 5),
+  comment TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (property_id) REFERENCES Property(property_id),
+  FOREIGN KEY (user_id) REFERENCES User(user_id)                                              
+);
 ```
 
