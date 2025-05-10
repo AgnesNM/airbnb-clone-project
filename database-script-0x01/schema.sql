@@ -64,5 +64,17 @@ CREATE TABLE Review (
   FOREIGN KEY (property_id) REFERENCES Property(property_id),
   FOREIGN KEY (user_id) REFERENCES User(user_id)                                              
 );
+
+-- Message Table
+CREATE TABLE Message (
+  message_id UUID PRIMARY KEY,
+  sender_id UUID NOT NULL,
+  recipient_id UUID NOT NULL,
+  message_body TEXT NOT NULL,
+  sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (sender_id) REFERENCES User(user_id),
+  FOREIGN KEY (recipient_id) REFERENCES User(user_id)                                             
+);
+
 ```
 
