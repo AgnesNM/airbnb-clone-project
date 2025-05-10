@@ -11,5 +11,17 @@ CREATE TABLE User (
 );
 
 CREATE INDEX index_user_email ON User(email);
+
+CREATE TABLE Property (
+  property_id UUID PRIMARY KEY,
+  host_id UUID FOREIGN KEY,
+  name VARCHAR(255) NOT NULL,
+  description VARCHAR(255) UNIQUE NOT NULL,
+  location VARCHAR(255) NOT NULL,
+  price_per_night DECIMAL(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
+);
+
 ```
 
