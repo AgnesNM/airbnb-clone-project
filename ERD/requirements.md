@@ -1,6 +1,6 @@
-## Database Specification - AirBnB
-### Entities and Attributes
-#### User
+# Database Specification - AirBnB
+## Entities and Attributes
+### User
 
     user_id: Primary Key, UUID, Indexed
     first_name: VARCHAR, NOT NULL
@@ -11,7 +11,7 @@
     role: ENUM (guest, host, admin), NOT NULL
     created_at: TIMESTAMP, DEFAULT CURRENT_TIMESTAMP
 
-#### Property
+### Property
 
     property_id: Primary Key, UUID, Indexed
     host_id: Foreign Key, references User(user_id)
@@ -22,7 +22,7 @@
     created_at: TIMESTAMP, DEFAULT CURRENT_TIMESTAMP
     updated_at: TIMESTAMP, ON UPDATE CURRENT_TIMESTAMP
 
-#### Booking
+### Booking
 
     booking_id: Primary Key, UUID, Indexed
     property_id: Foreign Key, references Property(property_id)
@@ -33,7 +33,7 @@
     status: ENUM (pending, confirmed, canceled), NOT NULL
     created_at: TIMESTAMP, DEFAULT CURRENT_TIMESTAMP
 
-#### Payment
+### Payment
 
     payment_id: Primary Key, UUID, Indexed
     booking_id: Foreign Key, references Booking(booking_id)
@@ -41,7 +41,7 @@
     payment_date: TIMESTAMP, DEFAULT CURRENT_TIMESTAMP
     payment_method: ENUM (credit_card, paypal, stripe), NOT NULL
 
-#### Review
+### Review
 
     review_id: Primary Key, UUID, Indexed
     property_id: Foreign Key, references Property(property_id)
@@ -50,7 +50,7 @@
     comment: TEXT, NOT NULL
     created_at: TIMESTAMP, DEFAULT CURRENT_TIMESTAMP
 
-#### Message
+### Message
 
     message_id: Primary Key, UUID, Indexed
     sender_id: Foreign Key, references User(user_id)
@@ -95,3 +95,35 @@
         property_id in the Property and Booking tables.
         booking_id in the Booking and Payment tables.
 
+## Entity Relationships
+1. **User relationships**:
+   - One user can have many bookings
+   - One user can send many messages
+   - One user can receive many messages
+   - One user can write many reviews
+   - One user can also be a host for many properties (via host_id in Property)
+
+2. **Property relationships**:
+   - One property can have many bookings
+   - One property can have many reviews
+   - Each property has one host (which is a user)
+
+3. **Booking relationships**:
+   - Each booking is for one property
+   - Each booking is made by one user
+   - Each booking can have one payment
+
+4. **Review relationships**:
+   - Each review is for one property
+   - Each review is written by one user
+
+5. **Message relationships**:
+   - Each message has one sender (user)
+   - Each message has one recipient (user)
+
+6. **Payment relationship**:
+   - Each payment is for one booking
+
+## Entity Relationship Visual
+
+[Database Specification - AirBnB](https://www.google.com)
