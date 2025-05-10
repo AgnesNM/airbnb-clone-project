@@ -8,7 +8,8 @@ CREATE TABLE User (
   phone_number VARCHAR(255) NULL,
   role ENUM('guest', 'host', 'admin') NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  INDEX index_user_email (email)
 );
+
+CREATE INDEX index_user_email ON User(email);
 ```
 
