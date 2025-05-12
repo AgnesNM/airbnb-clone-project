@@ -16,3 +16,11 @@ For a table to be in 3NF, it must:
     - There are no transitive dependencies where one non-key column determines another non-key column
     
 This table meets 3NF requirements.
+
+## The Property Table 
+
+- There are no transitive dependencies. All non-key attributes depend directly on the primary key and not on other non-key attributes.
+- Proper use of foreign keys: Instead of duplicating host information within the Property table (which would violate 3NF), the design uses host_id as a foreign key to reference the complete host information stored in the     User table.
+- Separation of concerns: The design properly separates property data from user data, with each entity having its own dedicated table and attributes that directly describe that entity's characteristics.
+
+This database design follows good relational database principles, maintaining appropriate relationships between entities while avoiding redundancy and ensuring all attributes in the Property table are directly dependent on the property's unique identifier.
