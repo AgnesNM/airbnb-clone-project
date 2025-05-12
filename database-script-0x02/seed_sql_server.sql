@@ -35,9 +35,15 @@ VALUES
 -- Insert Reviews
 INSERT INTO Review (review_id, property_id, user_id, rating, comment, created_at)
 VALUES 
-  ('Q7612N6P-3O56-7232-LM61-5O741DF5OPQ6', 'E3D19B4D-6C10-4F56-9E34-3C825DF3CED4', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', 5, 'Absolutely stunning property with amazing views! The host was very accommodating and responsive. We particularly enjoyed the infinity pool and the beach access. Will definitely return!', '2024-06-16 10:00:00'),
-  ('R9511O7Q-2P47-6142-MN71-6P650DF6PQR7', 'F5B18C5E-5D12-4C45-AE23-4D736DF4DFE5', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', 4, 'Great location and modern amenities. Could use a bit more kitchen supplies. The city views were amazing and we loved being able to walk to all the major attractions. The bed was very comfortable.', '2024-07-06 14:30:00'),
-  ('S1410P8R-1Q38-5052-NO81-7Q569DF7QRS8', 'H9C16E7G-3F10-4B23-CE01-6F558DF6FHG7', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', 5, 'Perfect lakeside retreat! We loved the private dock and the peaceful surroundings. The cottage was clean and had everything we needed for a comfortable stay. The sunsets were breathtaking.', '2024-07-26 09:45:00');
+  ('AABBCC11-1234-5678-90AB-CDEF12345678', 'E3D19B4D-6C10-4F56-9E34-3C825DF3CED4', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', 5, 'Amazing beachfront property! The views were breathtaking and the amenities were top-notch. We especially loved the infinity pool. Will definitely book again.', '2024-06-16 10:30:00'),
+  
+  ('BBCCDD22-2345-6789-ABCD-EF1234567890', 'F5B18C5E-5D12-4C45-AE23-4D736DF4DFE5', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', 4, 'Great location in downtown. The loft was stylish and comfortable. Only giving 4 stars because the street noise was a bit loud at night, but otherwise perfect.', '2024-07-06 14:15:00'),
+  
+  ('CCDDEE33-3456-789A-BCDE-F12345678901', 'A7A17D6F-4E11-4D34-BD12-5E647DF5EFF6', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', 5, 'Cozy mountain cabin with incredible views! The fireplace made our evenings so special. Everything was clean and well-maintained.', '2024-08-21 16:20:00'),
+  
+  ('DDEEFF44-4567-89AB-CDEF-123456789012', 'B9C16E7F-3F10-4B23-CE01-6F558DF6FFF7', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', 4, 'Peaceful lakeside retreat. Enjoyed fishing off the private dock and watching sunsets. Kitchen could use some updating, but overall a wonderful stay.', '2024-07-26 09:45:00'),
+  
+  ('EEFF5555-5678-9ABC-DEF1-2345678901233', 'E3D19B4D-6C10-4F56-9E34-3C825DF3CED4', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', 3, 'The villa has great potential but needs some maintenance. Beach access was as advertised but we had issues with the air conditioning during our stay.', '2024-04-15 11:20:00');
 
 -- Insert Messages
 INSERT INTO Message (message_id, sender_id, recipient_id, message_body, sent_at)
