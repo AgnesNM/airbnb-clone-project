@@ -45,3 +45,11 @@ This table meets 3NF requirements.
     - The Review table includes foreign keys (property_id, user_id) that reference other tables
 
 This table meets 3NF requirements.
+
+## The Message Table
+    
+    - Each attribute directly depends on the message_id (the primary key) and not on any other non-key attribute. 
+    - There are no transitive dependencies where one non-key attribute determines another.
+    - The use of foreign keys (sender_id and recipient_id) is proper normalization, as they reference the primary key of the User table rather than duplicating user information within the Message table.  
+
+This table meets 3NF requirements.
