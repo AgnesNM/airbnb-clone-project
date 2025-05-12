@@ -32,3 +32,9 @@ This table meets 3NF requirements.
     - Proper referential integrity. Foreign keys to Property and User tables maintain data consistency without introducing redundancy.
 
 This table meets 3NF requirements.
+
+## The Payment Table
+
+    - Each attribute directly depends on the payment_id (the primary key), and there are no transitive dependencies between the non-key attributes. The booking_id serves as a foreign key to maintain referential integrity       with the Booking table.
+    
+This table meets 3NF requirements.
