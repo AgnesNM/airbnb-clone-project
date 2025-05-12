@@ -38,3 +38,10 @@ This table meets 3NF requirements.
     - Each attribute directly depends on the payment_id (the primary key), and there are no transitive dependencies between the non-key attributes. The booking_id serves as a foreign key to maintain referential integrity       with the Booking table.
     
 This table meets 3NF requirements.
+
+## The Review Table
+
+    - There are no non-key attributes that depend on other non-key attributes
+    - The Review table includes foreign keys (property_id, user_id) that reference other tables
+
+This table meets 3NF requirements.
