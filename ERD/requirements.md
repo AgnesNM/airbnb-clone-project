@@ -126,4 +126,4 @@
 
 ## Entity Relationship Visual
 
-[Database Specification - AirBnB](https://github.com/AgnesNM/airbnb-clone-project/blob/main/ERD/Database%20Specification%20-%20AirBnB.drawio.png)
+[Database Specification - AirBnB](https://github.com/AgnesNM/airbnb-clone-project/blob/main/ERD/Database%20Specification%20-%20AirBnB.drawio(1).png)
