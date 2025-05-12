@@ -22,5 +22,13 @@ This table meets 3NF requirements.
     - There are no transitive dependencies. All non-key attributes depend directly on the primary key and not on other non-key attributes.
     - Proper use of foreign keys: Instead of duplicating host information within the Property table (which would violate 3NF), the design uses host_id as a foreign key to reference the complete host information stored in         the User table.
     - Separation of concerns: The design properly separates property data from user data, with each entity having its own dedicated table and attributes that directly describe that entity's characteristics.
+    
+This table meets 3NF requirements.
 
-This database design follows good relational database principles, maintaining appropriate relationships between entities while avoiding redundancy and ensuring all attributes in the Property table are directly dependent on the property's unique identifier.
+## The Booking Table 
+
+    - There are no transitive dependencies where non-key attributes depend on other non-key attributes. Each attribute directly depends on the primary key.
+    - Proper separation of concerns. While total_price is related to the property's price_per_night and the booking duration, it's correctly stored in the Booking table.
+    - Proper referential integrity. Foreign keys to Property and User tables maintain data consistency without introducing redundancy.
+
+This table meets 3NF requirements.
