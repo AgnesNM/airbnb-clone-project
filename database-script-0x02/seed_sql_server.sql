@@ -13,8 +13,8 @@ INSERT INTO Property (property_id, host_id, name, description, location, price_p
 VALUES 
   ('E3D19B4D-6C10-4F56-9E34-3C825DF3CED4', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'Beachfront Villa', 'Luxurious villa with direct beach access and panoramic ocean views. Fully equipped kitchen, infinity pool, and outdoor entertainment area.', 'Malibu, CA', 350.00, '2024-01-05 12:00:00', '2024-01-05 12:00:00'),
   ('F5B18C5E-5D12-4C45-AE23-4D736DF4DFE5', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'Downtown Loft', 'Modern loft in the heart of downtown with city views. Walking distance to restaurants, shopping, and entertainment.', 'New York, NY', 200.00, '2024-01-10 15:30:00', '2024-01-20 10:15:00'),
-  ('G7A17D6F-4E11-4D34-BD12-5E647DF5EGF6', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'Mountain Cabin', 'Cozy cabin with fireplace and mountain views. Perfect for a weekend getaway or ski trip.', 'Aspen, CO', 175.00, '2024-02-15 09:00:00', '2024-02-15 09:00:00'),
-  ('H9C16E7G-3F10-4B23-CE01-6F558DF6FHG7', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'Lakeside Cottage', 'Peaceful cottage with private dock and lake access. Enjoy fishing, swimming, and beautiful sunsets.', 'Lake Tahoe, CA', 225.00, '2024-03-01 11:45:00', '2024-03-05 16:30:00');
+  ('A7A17D6F-4E11-4D34-BD12-5E647DF5EFF6', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'Mountain Cabin', 'Cozy cabin with fireplace and mountain views. Perfect for a weekend getaway or ski trip.', 'Aspen, CO', 175.00, '2024-02-15 09:00:00', '2024-02-15 09:00:00'),
+  ('B9C16E7F-3F10-4B23-CE01-6F558DF6FFF7', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'Lakeside Cottage', 'Peaceful cottage with private dock and lake access. Enjoy fishing, swimming, and beautiful sunsets.', 'Lake Tahoe, CA', 225.00, '2024-03-01 11:45:00', '2024-03-05 16:30:00');
 
 -- Insert Bookings
 INSERT INTO Booking (booking_id, property_id, user_id, start_date, end_date, total_price, status, created_at)
