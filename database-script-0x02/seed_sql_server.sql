@@ -48,9 +48,23 @@ VALUES
 -- Insert Messages
 INSERT INTO Message (message_id, sender_id, recipient_id, message_body, sent_at)
 VALUES 
-  ('T3312Q9S-9R29-4962-OP91-8R478DF8RST9', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'Hi, I''m interested in your Beachfront Villa. Is it available for the dates I selected? Also, is the beach private or public access?', '2024-03-10 16:30:00'),
-  ('U5211R0T-8S10-3872-PQ01-9S387DF9STU0', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', 'Yes, those dates are available. The beach is a public beach but very secluded and rarely crowded. Would you like to proceed with the booking?', '2024-03-10 17:15:00'),
-  ('V7110S1U-7T01-2782-QR11-0T296DF0TUV1', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'Great, I''ve just completed the booking. Is there a check-in code or key pickup process? Also, is parking available on the property?', '2024-03-15 14:10:00'),
-  ('W9012T2V-6U92-1692-RS21-1U105DF1UVW2', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'Hello, does the Mountain Cabin have WiFi? I need to work remotely during my stay. And is the fireplace wood-burning or gas?', '2024-03-25 11:00:00'),
-  ('X1911U3W-5V83-0502-ST31-2V014DF2VWX3', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', 'Yes, we have high-speed WiFi throughout the cabin. The password will be in the welcome book. The fireplace is gas with a remote control for easy operation. Let me know if you have any other questions!', '2024-03-25 13:45:00');
+  ('AAAAAAAA-1111-2222-3333-444444444444', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'Hi John, I''m interested in booking your Beachfront Villa. Is it available for the first week of October?', '2024-05-01 09:30:00'),
+  
+  ('BBBBBBBB-2222-3333-4444-555555555555', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', 'Hello Jane, thanks for your interest! Yes, the villa is available for that week. Would you like me to reserve it for you?', '2024-05-01 10:15:00'),
+  
+  ('CCCCCCCC-3333-4444-5555-666666666666', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'That would be great! I''ll go ahead and make the booking. Is there anything special I should know about the property?', '2024-05-01 11:20:00'),
+  
+  ('DDDDDDDD-4444-5555-6666-777777777777', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'Hi Emily, I noticed your Lakeside Cottage has a private dock. Do you provide any water equipment like kayaks or paddleboards?', '2024-05-02 14:45:00'),
+  
+  ('EEEEEEEE-5555-6666-7777-888888888888', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', 'Hello Michael! Yes, we provide two kayaks and a paddleboard for guests to use. There are also fishing rods in the garage if you enjoy fishing.', '2024-05-02 15:30:00'),
+  
+  ('FFFFFFFF-6666-7777-8888-999999999999', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'John, I have a question about the Downtown Loft. Is parking included or do I need to find street parking?', '2024-05-03 09:15:00'),
+  
+  ('GGGGGGGG-7777-8888-9999-AAAAAAAAAAAA', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', 'Hi Michael, there''s a parking garage in the building. I''ll provide you with a guest pass that gives you access to one spot during your stay.', '2024-05-03 10:05:00'),
+  
+  ('HHHHHHHH-8888-9999-AAAA-BBBBBBBBBBBB', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'Emily, we loved our stay at your Mountain Cabin! The fireplace was perfect. Just wanted to let you know we left the key in the lockbox.', '2024-05-04 12:20:00'),
+  
+  ('IIIIIIII-9999-AAAA-BBBB-CCCCCCCCCCCC', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', 'Thank you for the kind words, Jane! I''m so glad you enjoyed your stay. Please come back anytime, and thanks for being such great guests!', '2024-05-04 13:10:00'),
+  
+  ('JJJJJJJJ-AAAA-BBBB-CCCC-DDDDDDDDDDDD', 'D1F29A3C-7B11-4E67-8D45-2B914DF2BFC3', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'John, this is Admin. Just a reminder that your host verification documents need to be renewed by the end of this month.', '2024-05-05 08:30:00');
 ```
