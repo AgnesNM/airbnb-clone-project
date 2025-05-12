@@ -45,26 +45,26 @@ VALUES
   
   ('EEFF5555-5678-9ABC-DEF1-2345678901233', 'E3D19B4D-6C10-4F56-9E34-3C825DF3CED4', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', 3, 'The villa has great potential but needs some maintenance. Beach access was as advertised but we had issues with the air conditioning during our stay.', '2024-04-15 11:20:00');
 
--- Insert Messages
+-- Insert Messages with proper UUID/GUID format (hexadecimal digits only)
 INSERT INTO Message (message_id, sender_id, recipient_id, message_body, sent_at)
 VALUES 
-  ('AAAAAAAA-1111-2222-3333-444444444444', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'Hi John, I''m interested in booking your Beachfront Villa. Is it available for the first week of October?', '2024-05-01 09:30:00'),
+  ('A1A1A1A1-B2B2-C3C3-D4D4-E5E5E5E5E5E5', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'Hi John, I''m interested in booking your Beachfront Villa. Is it available for the first week of October?', '2024-05-01 09:30:00'),
   
-  ('BBBBBBBB-2222-3333-4444-555555555555', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', 'Hello Jane, thanks for your interest! Yes, the villa is available for that week. Would you like me to reserve it for you?', '2024-05-01 10:15:00'),
+  ('B2B2B2B2-C3C3-D4D4-E5E5-F6F6F6F6F6F6', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', 'Hello Jane, thanks for your interest! Yes, the villa is available for that week. Would you like me to reserve it for you?', '2024-05-01 10:15:00'),
   
-  ('CCCCCCCC-3333-4444-5555-666666666666', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'That would be great! I''ll go ahead and make the booking. Is there anything special I should know about the property?', '2024-05-01 11:20:00'),
+  ('C3C3C3C3-D4D4-E5E5-F6F6-A7A7A7A7A7A7', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'That would be great! I''ll go ahead and make the booking. Is there anything special I should know about the property?', '2024-05-01 11:20:00'),
   
-  ('DDDDDDDD-4444-5555-6666-777777777777', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'Hi Emily, I noticed your Lakeside Cottage has a private dock. Do you provide any water equipment like kayaks or paddleboards?', '2024-05-02 14:45:00'),
+  ('D4D4D4D4-E5E5-F6F6-A7A7-B8B8B8B8B8B8', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'Hi Emily, I noticed your Lakeside Cottage has a private dock. Do you provide any water equipment like kayaks or paddleboards?', '2024-05-02 14:45:00'),
   
-  ('EEEEEEEE-5555-6666-7777-888888888888', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', 'Hello Michael! Yes, we provide two kayaks and a paddleboard for guests to use. There are also fishing rods in the garage if you enjoy fishing.', '2024-05-02 15:30:00'),
+  ('E5E5E5E5-F6F6-A7A7-B8B8-C9C9C9C9C9C9', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', 'Hello Michael! Yes, we provide two kayaks and a paddleboard for guests to use. There are also fishing rods in the garage if you enjoy fishing.', '2024-05-02 15:30:00'),
   
-  ('FFFFFFFF-6666-7777-8888-999999999999', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'John, I have a question about the Downtown Loft. Is parking included or do I need to find street parking?', '2024-05-03 09:15:00'),
+  ('F6F6F6F6-A7A7-B8B8-C9C9-D0D0D0D0D0D0', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'John, I have a question about the Downtown Loft. Is parking included or do I need to find street parking?', '2024-05-03 09:15:00'),
   
-  ('GGGGGGGG-7777-8888-9999-AAAAAAAAAAAA', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', 'Hi Michael, there''s a parking garage in the building. I''ll provide you with a guest pass that gives you access to one spot during your stay.', '2024-05-03 10:05:00'),
+  ('A7A7A7A7-B8B8-C9C9-D0D0-E1E1E1E1E1E1', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'B7F52C7A-2F13-47D9-A3B2-9D632DF0AFB1', 'Hi Michael, there''s a parking garage in the building. I''ll provide you with a guest pass that gives you access to one spot during your stay.', '2024-05-03 10:05:00'),
   
-  ('HHHHHHHH-8888-9999-AAAA-BBBBBBBBBBBB', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'Emily, we loved our stay at your Mountain Cabin! The fireplace was perfect. Just wanted to let you know we left the key in the lockbox.', '2024-05-04 12:20:00'),
+  ('B8B8B8B8-C9C9-D0D0-E1E1-F2F2F2F2F2F2', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'Emily, we loved our stay at your Mountain Cabin! The fireplace was perfect. Just wanted to let you know we left the key in the lockbox.', '2024-05-04 12:20:00'),
   
-  ('IIIIIIII-9999-AAAA-BBBB-CCCCCCCCCCCC', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', 'Thank you for the kind words, Jane! I''m so glad you enjoyed your stay. Please come back anytime, and thanks for being such great guests!', '2024-05-04 13:10:00'),
+  ('C9C9C9C9-D0D0-E1E1-F2F2-A3A3A3A3A3A3', 'C9D57B2E-8A12-4D78-B6C3-1A823DF1AED2', 'A5E55CA5-5C18-4EE1-A1B4-9C518DF231B2', 'Thank you for the kind words, Jane! I''m so glad you enjoyed your stay. Please come back anytime, and thanks for being such great guests!', '2024-05-04 13:10:00'),
   
-  ('JJJJJJJJ-AAAA-BBBB-CCCC-DDDDDDDDDDDD', 'D1F29A3C-7B11-4E67-8D45-2B914DF2BFC3', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'John, this is Admin. Just a reminder that your host verification documents need to be renewed by the end of this month.', '2024-05-05 08:30:00');
+  ('D0D0D0D0-E1E1-F2F2-A3A3-B4B4B4B4B4B4', 'D1F29A3C-7B11-4E67-8D45-2B914DF2BFC3', '28F72E56-75D9-4A27-A502-5A324A47FF14', 'John, this is Admin. Just a reminder that your host verification documents need to be renewed by the end of this month.', '2024-05-05 08:30:00');
 ```
