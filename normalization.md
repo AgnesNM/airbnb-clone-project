@@ -2,7 +2,7 @@
 
 A relation is in 3NF if it satisfies 2NF and additionally, there are no transitive dependencies. In simpler terms, non-prime attributes should not depend on other non-prime attributes. 
 
-Our database is comprised of different relations as shown in the [ER diagram](https://github.com/AgnesNM/airbnb-clone-project/blob/main/ERD/Database%20Specification%20-%20AirBnB.drawio.png)
+Our database is comprised of different relations as shown in the [ER diagram](https://github.com/AgnesNM/airbnb-clone-project/blob/main/ERD/Database%20Specification%20-%20AirBnB.drawio(1).png)
 
 For a table to be in 3NF, it must:
 
