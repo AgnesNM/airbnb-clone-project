@@ -1,0 +1,223 @@
+# Airbnb Clone Database
+
+This repository contains sample SQL data for an Airbnb-like property rental platform database. The database includes tables for users, properties, bookings, payments, reviews, and messages, providing a complete structure for a rental marketplace application.
+
+## Database Structure
+
+The database consists of the following tables:
+
+### User
+
+Stores information about platform users, including guests, hosts, and administrators.
+
+- `user_id` (UUID): Primary key
+- `first_name`: User's first name
+- `last_name`: User's last name
+- `email`: User's email address
+- `password_hash`: Hashed password for security
+- `phone_number`: Contact phone number
+- `role`: User role (guest, host, or admin)
+- `created_at`: Timestamp when the user account was created
+
+### Property
+
+Contains details about rental properties listed on the platform.
+
+- `property_id` (UUID): Primary key
+- `host_id` (UUID): Foreign key reference to User table
+- `name`: Property name/title
+- `description`: Detailed property description
+- `location`: Property location (city, state)
+- `price_per_night`: Nightly rental rate
+- `created_at`: Timestamp when the property was listed
+- `updated_at`: Timestamp when the property details were last updated
+
+### Booking
+
+Records of property reservations made by guests.
+
+- `booking_id` (UUID): Primary key
+- `property_id` (UUID): Foreign key reference to Property table
+- `user_id` (UUID): Foreign key reference to User table (the guest)
+- `start_date`: Reservation start date
+- `end_date`: Reservation end date
+- `total_price`: Total cost for the entire stay
+- `status`: Booking status (confirmed, pending, canceled)
+- `created_at`: Timestamp when the booking was created
+
+### Payment
+
+Tracks payment transactions for bookings.
+
+- `payment_id` (UUID): Primary key
+- `booking_id` (UUID): Foreign key reference to Booking table
+- `amount`: Payment amount
+- `payment_date`: Date and time of payment
+- `payment_method`: Method used for payment (credit_card, paypal, stripe)
+
+### Review
+
+Guest reviews for properties they've stayed at.
+
+- `review_id` (UUID): Primary key
+- `property_id` (UUID): Foreign key reference to Property table
+- `user_id` (UUID): Foreign key reference to User table (the reviewer)
+- `rating`: Numerical rating (1-5)
+- `comment`: Text review
+- `created_at`: Timestamp when the review was submitted
+
+### Message
+
+Communication between users on the platform.
+
+- `message_id` (UUID): Primary key
+- `sender_id` (UUID): Foreign key reference to User table
+- `recipient_id` (UUID): Foreign key reference to User table
+- `message_body`: Text content of the message
+- `sent_at`: Timestamp when the message was sent
+
+## Sample Data
+
+The SQL script includes sample data for all tables:
+
+- 5 users (2 hosts, 2 guests, 1 admin)
+- 4 properties (2 per host)
+- 5 bookings (with different statuses)
+- 3 payments
+- 5 reviews
+- 10 messages between users
+
+## Entity Relationships
+
+- A User can be a guest and/or a host
+- Hosts can list multiple Properties
+- Guests can make multiple Bookings
+- Each Booking is for one Property by one guest
+- Each Payment is associated with one Booking
+- Guests can leave Reviews for Properties they've booked
+- Users can exchange Messages with each other
+
+## Common Queries
+
+### Retrieving Bookings with User Information (INNER JOIN)
+
+This query uses an INNER JOIN to retrieve all bookings along with details about the users who made those bookings:
+
+```sql
+SELECT 
+    b.booking_id,
+    b.start_date,
+    b.end_date,
+    b.total_price,
+    b.status,
+    u.user_id,
+    u.first_name,
+    u.last_name,
+    u.email,
+    u.phone_number
+FROM 
+    Booking b
+INNER JOIN 
+    [User] u ON b.user_id = u.user_id
+ORDER BY 
+    b.start_date;
+```
+
+The INNER JOIN ensures that only records with matches in both tables are returned. In this context, it means we only get bookings that have a corresponding user in the User table. With properly maintained data integrity, all bookings should have a valid user_id, so all bookings should be returned.
+
+### Retrieving Properties with Reviews (LEFT JOIN)
+
+This query uses a LEFT JOIN to retrieve all properties and their reviews, including properties that have no reviews:
+
+```sql
+SELECT 
+    p.property_id,
+    p.name AS property_name,
+    p.location,
+    p.price_per_night,
+    r.review_id,
+    r.rating,
+    r.comment,
+    r.created_at AS review_date,
+    u.first_name AS reviewer_first_name,
+    u.last_name AS reviewer_last_name
+FROM 
+    Property p
+LEFT JOIN 
+    Review r ON p.property_id = r.property_id
+LEFT JOIN 
+    [User] u ON r.user_id = u.user_id
+ORDER BY 
+    p.name, r.created_at DESC;
+```
+
+The LEFT JOIN is crucial here because:
+- It returns ALL records from the left table (Property) regardless of whether there are matches in the right table (Review)
+- For properties with no reviews, the review fields (review_id, rating, comment, etc.) will be NULL
+- It allows property owners and administrators to identify properties that may need attention to generate reviews
+- A second LEFT JOIN retrieves reviewer information when available
+
+### Retrieving Users and Bookings (FULL OUTER JOIN)
+
+This query uses a FULL OUTER JOIN to retrieve all users and all bookings, even if a user has no bookings or a booking is not linked to a user:
+
+```sql
+SELECT 
+    u.user_id,
+    u.first_name,
+    u.last_name,
+    u.email,
+    u.role,
+    b.booking_id,
+    b.property_id,
+    b.start_date,
+    b.end_date,
+    b.total_price,
+    b.status
+FROM 
+    [User] u
+FULL OUTER JOIN 
+    Booking b ON u.user_id = b.user_id
+ORDER BY 
+    u.last_name, u.first_name, b.start_date;
+```
+
+The FULL OUTER JOIN provides these benefits:
+- Returns ALL users, including those who have never made a booking (booking fields will be NULL)
+- Returns ALL bookings, even if they somehow don't have a valid user association (user fields will be NULL)
+- Useful for data integrity checks to find orphaned bookings or inactive users
+- Helps identify anomalies that might need administrative attention
+- Can reveal users who register but never book (potential marketing opportunities)
+
+## Usage
+
+This database can be used for:
+
+- Development and testing of rental platform applications
+- Database design and query practice
+- Demonstrating relationships between entities in a marketplace platform
+- Practice with SQL transactions and data manipulation
+
+To use this data:
+
+1. Create a database in your SQL server
+2. Run the SQL script to create and populate the tables
+3. Start querying or developing against the database
+
+## Notes
+
+- All IDs are stored as UUIDs/GUIDs for better security and distribution
+- Passwords are represented as hashed values (not actual passwords)
+- Dates in the sample data range from January 2024 to September 2024
+- Timestamps use the format 'YYYY-MM-DD HH:MM:SS'
+
+## Extending the Database
+
+Consider adding these tables for a more complete application:
+
+- PropertyAmenities
+- PropertyPhotos
+- UserProfiles (with additional user details)
+- WishLists
+- PaymentRefunds
+- Notifications
