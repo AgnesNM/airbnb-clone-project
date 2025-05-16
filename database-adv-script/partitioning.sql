@@ -125,6 +125,7 @@ JOIN sys.partition_functions pf ON ps.function_id = pf.function_id
 JOIN sys.filegroups fg ON p.partition_number = fg.data_space_id
 WHERE i.object_id = OBJECT_ID('Booking') AND i.index_id = 1;
 
+
 -- Implementing partitioning on the Booking table based on start_date
 -- This script assumes we're using SQL Server which supports range partitioning
 
