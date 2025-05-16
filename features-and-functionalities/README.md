@@ -141,6 +141,3 @@ This diagram was created using Draw.io (diagrams.net), a free online diagram sof
 
 For more detailed information about each component, refer to the full project requirements documentation.
 
----
-
-Created as part of the ALX Airbnb Clone Project (May 2025)
