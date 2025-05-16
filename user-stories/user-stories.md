@@ -1,6 +1,6 @@
 # Airbnb Clone - User Stories
 
-This document contains user stories derived from the use case diagram for the Airbnb Clone project. Each user story follows the format: "As a [role], I want to [action] so that [benefit]."
+This document contains user stories derived from the use case diagram for the Airbnb Clone project.
 
 ## Host User Stories
 
@@ -62,6 +62,3 @@ This document contains user stories derived from the use case diagram for the Ai
 31. **As a Payment Gateway**, I want to issue refunds when bookings are canceled so that guests receive their money back according to platform policies.
 32. **As a Payment Gateway**, I want to transfer funds to hosts after successful stays so that hosts receive their earnings in a timely manner.
 
----
-
-These user stories serve as the foundation for developing the Airbnb Clone's features and functionality. They capture the essential needs of all key actors in the system and provide clear value propositions for each required feature.
