@@ -189,6 +189,112 @@ The FULL OUTER JOIN provides these benefits:
 - Helps identify anomalies that might need administrative attention
 - Can reveal users who register but never book (potential marketing opportunities)
 
+### Finding Highly-Rated Properties (Subquery)
+
+This query uses a subquery to find all properties where the average rating is greater than 4.0:
+
+```sql
+SELECT 
+    p.property_id,
+    p.name AS property_name,
+    p.location,
+    p.price_per_night,
+    (SELECT AVG(rating) FROM Review r WHERE r.property_id = p.property_id) AS average_rating
+FROM 
+    Property p
+WHERE 
+    (SELECT AVG(rating) FROM Review r WHERE r.property_id = p.property_id) > 4.0
+ORDER BY 
+    average_rating DESC;
+```
+
+Key aspects of this subquery:
+- The subquery appears twice: once in the SELECT clause to display the average rating and once in the WHERE clause for filtering
+- For each row in the Property table, the subquery calculates the average rating for that specific property
+- Only properties with an average rating higher than 4.0 are included in the results
+- Results are sorted by average rating in descending order, showing the highest-rated properties first
+
+### Finding Frequent Bookers (Correlated Subquery)
+
+This query uses a correlated subquery to find users who have made more than 3 bookings:
+
+```sql
+SELECT 
+    u.user_id,
+    u.first_name,
+    u.last_name,
+    u.email,
+    u.role,
+    (SELECT COUNT(*) FROM Booking b WHERE b.user_id = u.user_id) AS booking_count
+FROM 
+    [User] u
+WHERE 
+    (SELECT COUNT(*) FROM Booking b WHERE b.user_id = u.user_id) > 3
+ORDER BY 
+    booking_count DESC;
+```
+
+How this correlated subquery works:
+- For each user in the User table, the subquery counts how many bookings are associated with that user
+- The correlation happens through the WHERE clause in the subquery (b.user_id = u.user_id)
+- Only users with more than 3 bookings are included in the results
+- The subquery appears both in the SELECT clause (to display the count) and the WHERE clause (for filtering)
+- Results are ordered by booking count, showing the most active users first
+- This identifies valuable repeat customers for potential loyalty programs or targeted marketing
+
+### Finding Highly-Rated Properties (Subquery)
+
+This query uses a subquery to find all properties where the average rating is greater than 4.0:
+
+```sql
+SELECT 
+    p.property_id,
+    p.name AS property_name,
+    p.location,
+    p.price_per_night,
+    (SELECT AVG(rating) FROM Review r WHERE r.property_id = p.property_id) AS average_rating
+FROM 
+    Property p
+WHERE 
+    (SELECT AVG(rating) FROM Review r WHERE r.property_id = p.property_id) > 4.0
+ORDER BY 
+    average_rating DESC;
+```
+
+Key aspects of this subquery:
+- The subquery appears twice: once in the SELECT clause to display the average rating and once in the WHERE clause for filtering
+- For each row in the Property table, the subquery calculates the average rating for that specific property
+- Only properties with an average rating higher than 4.0 are included in the results
+- Results are sorted by average rating in descending order, showing the highest-rated properties first
+
+### Finding Frequent Bookers (Correlated Subquery)
+
+This query uses a correlated subquery to find users who have made more than 3 bookings:
+
+```sql
+SELECT 
+    u.user_id,
+    u.first_name,
+    u.last_name,
+    u.email,
+    u.role,
+    (SELECT COUNT(*) FROM Booking b WHERE b.user_id = u.user_id) AS booking_count
+FROM 
+    [User] u
+WHERE 
+    (SELECT COUNT(*) FROM Booking b WHERE b.user_id = u.user_id) > 3
+ORDER BY 
+    booking_count DESC;
+```
+
+How this correlated subquery works:
+- For each user in the User table, the subquery counts how many bookings are associated with that user
+- The correlation happens through the WHERE clause in the subquery (b.user_id = u.user_id)
+- Only users with more than 3 bookings are included in the results
+- The subquery appears both in the SELECT clause (to display the count) and the WHERE clause (for filtering)
+- Results are ordered by booking count, showing the most active users first
+- This identifies valuable repeat customers for potential loyalty programs or targeted marketing
+
 ## Usage
 
 This database can be used for:
