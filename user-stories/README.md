@@ -85,18 +85,4 @@ The repository includes a UML Use Case Diagram that visually represents all syst
 - **Email Notifications**: SendGrid or equivalent
 - **Testing**: Comprehensive unit and integration tests
 
-## Getting Started
 
-[Instructions for setting up the project, installing dependencies, and running the server]
-
-## API Documentation
-
-[Link to API documentation or instructions on how to access it]
-
-## Contributing
-
-[Guidelines for contributing to the project]
-
-## License
-
-[License information]
