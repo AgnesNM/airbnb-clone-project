@@ -242,6 +242,67 @@ How this correlated subquery works:
 - Results are ordered by booking count, showing the most active users first
 - This identifies valuable repeat customers for potential loyalty programs or targeted marketing
 
+### Counting User Bookings (Aggregation with GROUP BY)
+
+This query finds the total number of bookings made by each user using the COUNT function and GROUP BY clause:
+
+```sql
+SELECT 
+    u.user_id,
+    u.first_name,
+    u.last_name,
+    u.email,
+    COUNT(b.booking_id) AS total_bookings
+FROM 
+    [User] u
+LEFT JOIN 
+    Booking b ON u.user_id = b.user_id
+GROUP BY 
+    u.user_id, u.first_name, u.last_name, u.email
+ORDER BY 
+    total_bookings DESC;
+```
+
+Key features of this aggregation query:
+- Uses LEFT JOIN to include all users, even those with no bookings
+- The COUNT function tallies the number of bookings for each user
+- GROUP BY combines all rows for the same user into a single summary row
+- All non-aggregated columns in the SELECT must appear in the GROUP BY clause
+- Results are ordered by booking count to identify the most active users first
+- Returns 0 for users who have never made a booking (unlike INNER JOIN which would exclude them)
+
+### Ranking Properties by Popularity (Window Functions)
+
+This query uses window functions to rank properties based on their booking counts:
+
+```sql
+SELECT 
+    p.property_id,
+    p.name AS property_name,
+    p.location,
+    p.price_per_night,
+    COUNT(b.booking_id) AS booking_count,
+    ROW_NUMBER() OVER (ORDER BY COUNT(b.booking_id) DESC) AS booking_rank,
+    RANK() OVER (ORDER BY COUNT(b.booking_id) DESC) AS booking_rank_with_ties
+FROM 
+    Property p
+LEFT JOIN 
+    Booking b ON p.property_id = b.property_id
+GROUP BY 
+    p.property_id, p.name, p.location, p.price_per_night
+ORDER BY 
+    booking_count DESC;
+```
+
+Window functions add powerful analytical capabilities:
+- ROW_NUMBER() assigns a unique sequential integer to each row (1, 2, 3, ...)
+- RANK() allows for ties, so multiple properties with the same booking count get the same rank
+- OVER clause defines how to partition and order the data for the window function
+- Unlike regular aggregations, window functions don't collapse rows
+- Combination of GROUP BY (for counting) and window functions (for ranking) provides rich analysis
+- Shows both the absolute number of bookings and the relative popularity ranking
+- Helps identify the most popular properties for featured listings or premium positioning
+
 ### Finding Highly-Rated Properties (Subquery)
 
 This query uses a subquery to find all properties where the average rating is greater than 4.0:
